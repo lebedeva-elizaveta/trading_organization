@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// поставщик просто принимает информацию о товаре и передает эти товары в грузовик
+// РїРѕСЃС‚Р°РІС‰РёРє РїСЂРѕСЃС‚Рѕ РїСЂРёРЅРёРјР°РµС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ С‚РѕРІР°СЂРµ Рё РїРµСЂРµРґР°РµС‚ СЌС‚Рё С‚РѕРІР°СЂС‹ РІ РіСЂСѓР·РѕРІРёРє
 class Supplier {
 public:
     void sendToTruck(string name, int quantity, string type, Truck& truck, Store& store1, Store& store2, Warehouse& warehouse1, Warehouse& warehouse2);

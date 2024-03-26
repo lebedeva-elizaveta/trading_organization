@@ -1,4 +1,4 @@
-﻿#include "Organization.h"
+#include "Organization.h"
 #include "Supplier.h"
 #include "WholesaleClient.h"
 #include "RetailClient.h"

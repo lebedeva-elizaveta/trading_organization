@@ -2,7 +2,7 @@
 
 void RetailClient::buy(Product& product, int quantity, Warehouse& warehouse, Store& store) {
     if (quantity > 0 && quantity <= product.quantity) {
-        // еще раз проверяем количество, точно ли меньше 10
+        // РµС‰Рµ СЂР°Р· РїСЂРѕРІРµСЂСЏРµРј РєРѕР»РёС‡РµСЃС‚РІРѕ, С‚РѕС‡РЅРѕ Р»Рё РјРµРЅСЊС€Рµ 10
         if (quantity < 10) {
             if (quantity <= store.products.size()) {
                 product.quantity -= quantity;

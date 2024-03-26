@@ -6,7 +6,7 @@
 #include "store.h"
 #include <iostream>
 
-// ïîêóïàòåëü ñ÷èòàåòñÿ îïòîâûì, åñëè îí ñîáèðàåòñÿ êóïèòü >= 10 åäèíèö òîâàðà
+// Ð¿Ð¾ÐºÑƒÐ¿Ð°Ñ‚ÐµÐ»ÑŒ ÑÑ‡Ð¸Ñ‚Ð°ÐµÑ‚ÑÑ Ð¾Ð¿Ñ‚Ð¾Ð²Ñ‹Ð¼, ÐµÑÐ»Ð¸ Ð¾Ð½ ÑÐ¾Ð±Ð¸Ñ€Ð°ÐµÑ‚ÑÑ ÐºÑƒÐ¿Ð¸Ñ‚ÑŒ >= 10 ÐµÐ´Ð¸Ð½Ð¸Ñ† Ñ‚Ð¾Ð²Ð°Ñ€Ð°
 class WholesaleClient : public Client {
 public:
     void buy(Product& product, int quantity, Warehouse& warehouse, Store& store) override;

@@ -2,15 +2,15 @@
 #include <cmath>
 
 /*
-грузовик распределяет товары между складами и магазинами:
-изначально 30% товаров грузовик везет в магазин store1, 70% - на склад warehouse1;
-когда место в store1 начинает заканчиваться, тогда все, что не поместилось, отправляется в warehouse1;
-далее 30% товара грузовик начинает отвозить во второй магазин store2, а 70% продолжать отвозить на склад warehouse1;
-когда место в warehouse1 начинает заканчиваться, тогда все, что не поместилось, отправляется на другой склад warehouse2;
-далее 30% товара грузовик продолжает отвозить в магазин store2, а 70% начинает отвозить на склад warehouse2;
-когда место в store2 начинает заканчиваться, тогда все, что не поместилось, отправляется в warehouse1, если там еще есть
-место. если нет - на склад warehouse2;
-когда место в warehouse2 заканчивается, мы перестаем принимать товары.
+РіСЂСѓР·РѕРІРёРє СЂР°СЃРїСЂРµРґРµР»СЏРµС‚ С‚РѕРІР°СЂС‹ РјРµР¶РґСѓ СЃРєР»Р°РґР°РјРё Рё РјР°РіР°Р·РёРЅР°РјРё:
+РёР·РЅР°С‡Р°Р»СЊРЅРѕ 30% С‚РѕРІР°СЂРѕРІ РіСЂСѓР·РѕРІРёРє РІРµР·РµС‚ РІ РјР°РіР°Р·РёРЅ store1, 70% - РЅР° СЃРєР»Р°Рґ warehouse1;
+РєРѕРіРґР° РјРµСЃС‚Рѕ РІ store1 РЅР°С‡РёРЅР°РµС‚ Р·Р°РєР°РЅС‡РёРІР°С‚СЊСЃСЏ, С‚РѕРіРґР° РІСЃРµ, С‡С‚Рѕ РЅРµ РїРѕРјРµСЃС‚РёР»РѕСЃСЊ, РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ РІ warehouse1;
+РґР°Р»РµРµ 30% С‚РѕРІР°СЂР° РіСЂСѓР·РѕРІРёРє РЅР°С‡РёРЅР°РµС‚ РѕС‚РІРѕР·РёС‚СЊ РІРѕ РІС‚РѕСЂРѕР№ РјР°РіР°Р·РёРЅ store2, Р° 70% РїСЂРѕРґРѕР»Р¶Р°С‚СЊ РѕС‚РІРѕР·РёС‚СЊ РЅР° СЃРєР»Р°Рґ warehouse1;
+РєРѕРіРґР° РјРµСЃС‚Рѕ РІ warehouse1 РЅР°С‡РёРЅР°РµС‚ Р·Р°РєР°РЅС‡РёРІР°С‚СЊСЃСЏ, С‚РѕРіРґР° РІСЃРµ, С‡С‚Рѕ РЅРµ РїРѕРјРµСЃС‚РёР»РѕСЃСЊ, РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ РЅР° РґСЂСѓРіРѕР№ СЃРєР»Р°Рґ warehouse2;
+РґР°Р»РµРµ 30% С‚РѕРІР°СЂР° РіСЂСѓР·РѕРІРёРє РїСЂРѕРґРѕР»Р¶Р°РµС‚ РѕС‚РІРѕР·РёС‚СЊ РІ РјР°РіР°Р·РёРЅ store2, Р° 70% РЅР°С‡РёРЅР°РµС‚ РѕС‚РІРѕР·РёС‚СЊ РЅР° СЃРєР»Р°Рґ warehouse2;
+РєРѕРіРґР° РјРµСЃС‚Рѕ РІ store2 РЅР°С‡РёРЅР°РµС‚ Р·Р°РєР°РЅС‡РёРІР°С‚СЊСЃСЏ, С‚РѕРіРґР° РІСЃРµ, С‡С‚Рѕ РЅРµ РїРѕРјРµСЃС‚РёР»РѕСЃСЊ, РѕС‚РїСЂР°РІР»СЏРµС‚СЃСЏ РІ warehouse1, РµСЃР»Рё С‚Р°Рј РµС‰Рµ РµСЃС‚СЊ
+РјРµСЃС‚Рѕ. РµСЃР»Рё РЅРµС‚ - РЅР° СЃРєР»Р°Рґ warehouse2;
+РєРѕРіРґР° РјРµСЃС‚Рѕ РІ warehouse2 Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ, РјС‹ РїРµСЂРµСЃС‚Р°РµРј РїСЂРёРЅРёРјР°С‚СЊ С‚РѕРІР°СЂС‹.
 */
 void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& warehouse1, Warehouse& warehouse2) {
 
@@ -37,7 +37,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
     cout << warehouse2_capacity << endl;
 
     if ((store1_capacity < store1.max_capacity) && (warehouse1_capacity < warehouse1.max_capacity)) {
-        // распределение 30/70 между store1 и warehouse1
+        // СЂР°СЃРїСЂРµРґРµР»РµРЅРёРµ 30/70 РјРµР¶РґСѓ store1 Рё warehouse1
         if ((store1.max_capacity - store1_capacity >= store_quantity) &&
         (warehouse1.max_capacity - warehouse1_capacity >= warehouse_quantity)) {
             product->quantity = store_quantity;
@@ -45,7 +45,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
             product->quantity = warehouse_quantity;
             warehouse1.addProduct(*product);
         }
-        // то, что помещается в store1, добавляем туда. остальное - в warehouse1
+        // С‚Рѕ, С‡С‚Рѕ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ store1, РґРѕР±Р°РІР»СЏРµРј С‚СѓРґР°. РѕСЃС‚Р°Р»СЊРЅРѕРµ - РІ warehouse1
         else if ((store1.max_capacity - store1_capacity < store_quantity) && 
             (warehouse1.max_capacity - warehouse1_capacity >= product_full_quantity)) {
             if(store1.max_capacity - store1_capacity > 0) {
@@ -58,7 +58,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
     }
 
     else if (store1_capacity == store1.max_capacity) {
-        // распределение 30/70 между store2 и warehouse1
+        // СЂР°СЃРїСЂРµРґРµР»РµРЅРёРµ 30/70 РјРµР¶РґСѓ store2 Рё warehouse1
         if ((store2.max_capacity - store2_capacity >= store_quantity) &&
             (warehouse1.max_capacity - warehouse1_capacity >= warehouse_quantity)) {
             product->quantity = store_quantity;
@@ -66,7 +66,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
             product->quantity = warehouse_quantity;
             warehouse1.addProduct(*product);
         }
-        // то, что помещается в store2, добавляем туда. остальное - в warehouse1
+        // С‚Рѕ, С‡С‚Рѕ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ store2, РґРѕР±Р°РІР»СЏРµРј С‚СѓРґР°. РѕСЃС‚Р°Р»СЊРЅРѕРµ - РІ warehouse1
         else if ((store2.max_capacity - store2_capacity < store_quantity) &&
             (warehouse1.max_capacity - warehouse1_capacity >= product_full_quantity)) {
             if (store2.max_capacity - store2_capacity > 0) {
@@ -79,7 +79,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
     }
 
      if (warehouse1_capacity == warehouse1.max_capacity) {
-         // распределение 30/70 между store2 и warehouse2
+         // СЂР°СЃРїСЂРµРґРµР»РµРЅРёРµ 30/70 РјРµР¶РґСѓ store2 Рё warehouse2
          if ((store2.max_capacity - store2_capacity >= store_quantity) &&
              (warehouse2.max_capacity - warehouse2_capacity >= warehouse_quantity)) {
              product->quantity = store_quantity;
@@ -87,7 +87,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
              product->quantity = warehouse_quantity;
              warehouse2.addProduct(*product);
          }
-         // то, что помещается в store2, добавляем туда. остальное - в warehouse2
+         // С‚Рѕ, С‡С‚Рѕ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ store2, РґРѕР±Р°РІР»СЏРµРј С‚СѓРґР°. РѕСЃС‚Р°Р»СЊРЅРѕРµ - РІ warehouse2
          else if ((store2.max_capacity - store2_capacity < store_quantity) &&
              (warehouse2.max_capacity - warehouse2_capacity >= product_full_quantity)) {
              if (store2.max_capacity - store2_capacity > 0) {
@@ -99,7 +99,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
          }
      }
 
-     // то, что помещается в warehouse1, добавляем туда. остальное - в warehouse2
+     // С‚Рѕ, С‡С‚Рѕ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ warehouse1, РґРѕР±Р°РІР»СЏРµРј С‚СѓРґР°. РѕСЃС‚Р°Р»СЊРЅРѕРµ - РІ warehouse2
      if ((warehouse1.max_capacity - warehouse1_capacity < product_full_quantity) && 
          (warehouse2.max_capacity - warehouse2_capacity >= product_full_quantity)) {
          if (warehouse1.max_capacity - warehouse1_capacity > 0) {
@@ -109,7 +109,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
          product->quantity = product_full_quantity - (warehouse1.max_capacity - warehouse1_capacity);
          warehouse2.addProduct(*product);
      }
-     // то, что помещается в warehouse2, добавляем туда. остальное не добавляем
+     // С‚Рѕ, С‡С‚Рѕ РїРѕРјРµС‰Р°РµС‚СЃСЏ РІ warehouse2, РґРѕР±Р°РІР»СЏРµРј С‚СѓРґР°. РѕСЃС‚Р°Р»СЊРЅРѕРµ РЅРµ РґРѕР±Р°РІР»СЏРµРј
      else if (warehouse2.max_capacity - warehouse2_capacity < product_full_quantity) {
          product->quantity = warehouse2.max_capacity - warehouse2.products.size();
          if (warehouse2.max_capacity - warehouse2_capacity > 0) {
@@ -119,7 +119,7 @@ void Truck::load(Product* product, Store& store1, Store& store2, Warehouse& ware
          }
      }
 
-     // место закончилось
+     // РјРµСЃС‚Рѕ Р·Р°РєРѕРЅС‡РёР»РѕСЃСЊ
      if (warehouse2.max_capacity == warehouse2_capacity) {
         cout << "All storage locations are full. Product cannot be accepted." << endl;
      }

@@ -4,7 +4,7 @@
 #include "warehouse.h"
 #include "store.h"
 
- // торговая организация содержит магазины и склады
+ // С‚РѕСЂРіРѕРІР°СЏ РѕСЂРіР°РЅРёР·Р°С†РёСЏ СЃРѕРґРµСЂР¶РёС‚ РјР°РіР°Р·РёРЅС‹ Рё СЃРєР»Р°РґС‹
 class Organization {
 public:
     Warehouse warehouse;

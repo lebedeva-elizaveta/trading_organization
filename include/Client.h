@@ -5,7 +5,7 @@
 #include "warehouse.h"
 #include "store.h"
 
-// клиент может только покупать товары
+// РєР»РёРµРЅС‚ РјРѕР¶РµС‚ С‚РѕР»СЊРєРѕ РїРѕРєСѓРїР°С‚СЊ С‚РѕРІР°СЂС‹
 class Client {
 public:
     virtual void buy(Product& product, int quantity, Warehouse& warehouse, Store& store) = 0;

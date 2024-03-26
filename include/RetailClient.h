@@ -6,7 +6,7 @@
 #include "store.h"
 #include <iostream>
 
-// покупатель считается розничным, если он хочет купить <10 единиц товара
+// РїРѕРєСѓРїР°С‚РµР»СЊ СЃС‡РёС‚Р°РµС‚СЃСЏ СЂРѕР·РЅРёС‡РЅС‹Рј, РµСЃР»Рё РѕРЅ С…РѕС‡РµС‚ РєСѓРїРёС‚СЊ <10 РµРґРёРЅРёС† С‚РѕРІР°СЂР°
 class RetailClient : public Client {
 public:
     void buy(Product& product, int quantity, Warehouse& warehouse, Store& store) override;

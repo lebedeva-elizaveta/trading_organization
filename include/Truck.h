@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// грузовик распределяет товары между складами и магазинами
+// РіСЂСѓР·РѕРІРёРє СЂР°СЃРїСЂРµРґРµР»СЏРµС‚ С‚РѕРІР°СЂС‹ РјРµР¶РґСѓ СЃРєР»Р°РґР°РјРё Рё РјР°РіР°Р·РёРЅР°РјРё
 class Truck {
 public:
     void load(Product* product, Store& store1, Store& store2, Warehouse& warehouse1, Warehouse& warehouse2);
