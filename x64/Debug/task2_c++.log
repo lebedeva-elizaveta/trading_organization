@@ -1,3 +1,0 @@
-﻿  Truck.cpp
-C:\Users\Mi NoteBook Pro\source\repos\task2_c++\task2_c++\Truck.cpp(114,82): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-  task2_c++.vcxproj -> C:\Users\Mi NoteBook Pro\source\repos\task2_c++\x64\Debug\task2_c++.exe
